@@ -3,7 +3,7 @@
 
   var App = window.App || {};
   var $ = window.jQuery;
-  var $modalBody = $('#myModal .modal-body');
+  var $modalBody = $('#myModal .modal-body');                     //RIGHT HERE
 
   function FormHandler(selector) {
     if (!selector) {
@@ -25,11 +25,11 @@
       $(this).serializeArray().forEach(function (item) {
         data[item.name] = item.value;
         console.log(item.name + ' is ' + item.value);
-        $modalBody.text(data.user);
+        $modalBody.text('data.user');                               //RIGHT HERE
       });
       console.log(data);
       fn(data);
-      $('#myModal').modal('show');
+      $('#myModal').modal('show');                                //RIGHT HERE
       this.reset();
       this.elements[0].focus();
     });
